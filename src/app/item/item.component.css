@@ -4,13 +4,41 @@
   font-size: 1.2rem;
 }
 
+.isDone {
+  text-decoration: line-through;
+}
+
+.isNotDone {
+  text-decoration: none;
+}
 
 .des {
   float: auto;
 }
 
+.desDone {
+  text-decoration: line-through;
+  float: auto;
+}
+
 .due {
   float: right;
+}
+
+.overtime {
+  float: right;
+  color: #e30000;
+}
+
+.dueAndDone {
+  float: right;
+  text-decoration: line-through;
+}
+
+.overtimeAndDone {
+  float: right;
+  color: #e30000;
+  text-decoration: line-through;
 }
 
 .btn-wrapper {

@@ -9,7 +9,18 @@
   <input #newItem placeholder="add an item" (keyup.enter)="addItem(newItem.value); newItem.value = ''"
     class="lg-text-input" id="addItemInput" />
 
-  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+  <mat-form-field>
+    <mat-label>Choose a due-date</mat-label>
+    <input matInput [matDatepicker]="picker"
+            (dateChange)="addItem_withDuedate(newItem.value, $event)">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+
+  <!-- <button class="btn-primary" (click)="addItem(newItem.value)">Add</button> -->
+  <!-- <button class="btn-primary" (click)="addItem_withDuedate(newItem.value, newItemDate.value)">Add</button> -->
 
   <h2>
     {{items.length}}
